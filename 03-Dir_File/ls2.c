@@ -61,11 +61,7 @@ void do_stat(char* fileName) {
 void show_stat(char* fileName, struct stat* statPointer) {
     /** display some info from stat in a name = value format */   
     
-    //char* timeStr = (char*)malloc(25);
     char* modeStr = (char*)malloc(20);
-
-    //time_t time = statPointer->st_mtime;
-    //timeStr = ctime(&time);
     mode_to_string(statPointer->st_mode, modeStr);
 
     printf("%s ", modeStr);
