@@ -154,10 +154,10 @@ unix> wc -w ~/Desktop/main.c  ~/Desktop/main.c
   如果所有的线程**在同一时刻**都使用"Fetch-add-store"的机器指令序列来完成对计
   数器的操作, 结果会怎样呢?
   
-  | Thread 1's Register | Comment | Thread 2' Register | Comment | TotalWords |
-  | 100 | Fetch value from TotalWords | 100 | Fetch value from TotalWords  | 100  |
-  | 101 | Add 1 to value | 101 | Add 1 to value | 100 |
-  | 101 | Store to TotalWords | 101 | Store to TotalWorlds | 101 |
+  | Thread 1's Register | Comment | Thread 2' Register | Comment | TotalWords |   
+  | 100 | Fetch value from TotalWords | 100 | Fetch value from TotalWords  | 100 |   
+  | 101 | Add 1 to value | 101 | Add 1 to value | 100 |   
+  | 101 | Store to TotalWords | 101 | Store to TotalWorlds | 101 |   
 
 #### Version 2: Two Threads, One Counter, One Mutex
 
