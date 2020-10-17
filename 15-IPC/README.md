@@ -77,7 +77,7 @@ Unix系统提供了系统调用*select*, 它允许程序挂起, 并等待从不�
 
 - Three Solutions: File, Pipe, Shared Memory
 
-第一种方法是之前学过的, 另外两个方法是**命名管道(named pipe)**以及
+第一种方法是之前学过的, 另外两个方法是**命名管道**(named pipe)以及
 **共享内存(shared memory segment)**. 这些方法分别通过磁盘, 内核以及用户空间进行数据
 的传输. 那它们如何具体应用? 各有什么优缺点?
 
@@ -425,18 +425,18 @@ set_read_lock(int fd) {
 
 `semctl(int semset_id, int semnum, int cmd, union semun arg)`   
 这里使用*semctl*来对信号量进行控制(control). 此函数的各参数含义如下:   
-1. 第一个参数是此集合的ID;
-2. 第二个参数是集合中某特定信号量的号码;
-3. 第三个参数是控制命令; 如果此控制命令需要参数, 那么使用第四个参数向其提供所需的参数.
+- 第一个参数是此集合的ID;
+- 第二个参数是集合中某特定信号量的号码;
+- 第三个参数是控制命令; 如果此控制命令需要参数, 那么使用第四个参数向其提供所需的参数.
 
 在`shm_ts2`程序中, 使用SETVAL命令来给每一个信号赋一个初始值零.
 
 3. Wait until no readers, then increment `num_writers`   
 `semop(int semid, struct sembuf* actions, size_t numactions)`   
 函数*semop*对信号量集完成一组操作.   
-1. 第一个参数用来指定信号量集;
-2. 第二个参数是一组活动的数组;
-3. 最后一个参数则是该数组的大小.
+- 第一个参数用来指定信号量集;
+- 第二个参数是一组活动的数组;
+- 最后一个参数则是该数组的大小.
 
 集合中的每一个活动都是一个结构体, 它的作用就是"使用选项`sem_flg`来完成对号码为`sem_num`的信号量的操作
 `sem_op`". 整个活动集合被作为组来完成, 这一点是关键. 上面程序中的函数`wait_and_lock`完成两个操作:
