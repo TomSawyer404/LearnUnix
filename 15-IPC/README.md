@@ -73,7 +73,7 @@ Unix系统提供了系统调用*select*, 它允许程序挂起, 并等待从不�
 - The Problem: Getting Data from Server to Client
 
 如何选择哪一种通信方法? 想一想前面使用的**流socket**写过时间/日期服务器. 某一进程
-知道当前使劲按, 而另一进程想获取当前时间, 如何让一个进程从另一个进程得到数据?
+知道当前时间, 而另一进程想获取当前时间, 如何让一个进程从另一个进程得到数据?
 
 - Three Solutions: File, Pipe, Shared Memory
 
