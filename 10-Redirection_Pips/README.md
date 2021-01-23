@@ -172,7 +172,7 @@ who命令将当前userlist送至文件描述符1. 其实这组字节已经被写
 下列系统调用可以创建管道.
 
 ```c
-result = pip(int array[2]);
+result = pipe(int array[2]);
 
 // returns -1 if fails, otherwise 0 is returned.
 ```
